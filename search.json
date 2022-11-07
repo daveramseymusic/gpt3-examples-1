@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "examples.html",
+    "href": "examples.html",
+    "title": "OpenAI GPT-3 examples",
+    "section": "",
+    "text": "Lets see what GPT-3 says\n\nHere we’ll write some prompts to see what the GPT3 text-davinci-001 model replies.\n\n\nFirst we’ll write a prompt for it:\n\nprompt = \"Write a tagline for a coffee shop\"\n\nNext we’ll run the prompt through the GPT-3 text-davinci-001 model\n\nresponse = openai.Completion.create(engine=\"text-davinci-001\", prompt=prompt, max_tokens=6)\nstr(response[\"choices\"][0][\"text\"])[2:]\n\n'A caffeinated haven'\n\n\n\n\nLet’s Try another prompt\n\nWine Shop Prompt\n\nprompt = \"Write a tagline for a wine shop\"\n\n\nresponse = openai.Completion.create(engine=\"text-davinci-001\", prompt=prompt, max_tokens=25)\nstr(response[\"choices\"][0][\"text\"])[2:]\n\n'libations for all occasions'\n\n\n'libations for all occasions'\n\n\n\n\n\n\nAsk GPT3 Function\n\ndef ask_gpt3(prompt,openai=openai):\n    response = openai.Completion.create(engine=\"text-davinci-001\", prompt=prompt, max_tokens=20)\n    text_response = str(response[\"choices\"][0][\"text\"])[2:]\n    return text_response\n\n\nTest Function with Champaign Prompt\n\nprompt = 'Whats a good tagline for champaign'\ntext_response = ask_gpt3(prompt)\nprint(text_response)\n\n\"Celebrate life\"\n\"Celebrate life\""
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quickstart with GPT3",
+    "section": "",
+    "text": "Lets ask GPT3 to create some text for us!\n\n-First we write a prompt to send to the model\n-Then the model creates text for us based on the prompt\n\nprompt = 'Whats a good tagline for champaign'\n\ntext_response = ask_gpt3(prompt)\nprint(text_response)\n\nTaste the feeling"
+  }
+]
